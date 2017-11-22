@@ -1,3 +1,9 @@
+# johanpetri.se using Gatsby and Contentful
+To run locally:
+```
+gatsby develop
+```
+
 # gatsby-starter-default
 The default Gatsby starter
 
