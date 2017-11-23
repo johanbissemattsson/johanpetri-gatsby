@@ -1,7 +1,7 @@
 # johanpetri.se using Gatsby and Contentful
 To run locally:
 ```
-gatsby develop
+yarn run develop
 ```
 
 # gatsby-starter-default
