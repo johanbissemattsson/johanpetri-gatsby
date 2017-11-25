@@ -5,7 +5,6 @@ class Page extends Component {
   render() {
     const page = this.props.data.page;
     const { title, body, pages } = page;
-    console.log(this.props);
     return (
       <div>
         <h1>{title}</h1>

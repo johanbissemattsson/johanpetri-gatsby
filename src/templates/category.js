@@ -5,7 +5,6 @@ class Category extends Component {
   render() {
     const page = this.props.data.page;
     const { title, body, pages } = page;
-    console.log(this.props);
     return (
       <div>
         <h1>{title}</h1>
@@ -17,7 +16,7 @@ class Category extends Component {
             {pages.map(( node, i) => {
               return (
                 <li key={node.id}>
-                  <Link to={node.slug}>
+                  <Link to={page.slug + '/' + node.slug}>
                     <h3>{node.title}</h3>
                     {node.description && 
                       <div dangerouslySetInnerHTML={{__html: node.description.content.html}} />
@@ -41,6 +40,7 @@ export const categoryQuery = graphql`
     page: contentfulCategory(slug: {eq: $slug}) {
       id
       title
+      slug
       body {
         content: childMarkdownRemark {
           html
@@ -49,6 +49,7 @@ export const categoryQuery = graphql`
        pages {
         id
         title
+        slug
         description: childContentfulPageDescriptionTextNode {
           content: childMarkdownRemark {
             html
