@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
+import Helmet from 'react-helmet'
 
 class Page extends Component {
   render() {
+    const site = this.props.data.site;    
     const page = this.props.data.page;
     const { title, body, pages } = page;
     return (
       <div>
+        <Helmet title={`${page.title} | ${site.siteMetadata.title}`} />
         <h1>{title}</h1>
         {body &&
           <div dangerouslySetInnerHTML={{__html: body.content.html}} />
@@ -37,6 +40,11 @@ export default Page;
 
 export const pageQuery = graphql`
   query PageQuery($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }    
     page: contentfulPage(slug: {eq: $slug}) {
       id
       title

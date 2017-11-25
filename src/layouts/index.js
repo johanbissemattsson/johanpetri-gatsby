@@ -23,10 +23,10 @@ const Header = () => (
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
-      title="Gatsby Default Starter"
+      title='Johan Petri'
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'description', content: 'Director, Dramaturgue and Artistic Researcher' },
+        { name: 'keywords', content: 'theater, music, performances, sound art, radio plays, artistic research, critical writing' },
       ]}
     />
     <Header />
@@ -47,4 +47,4 @@ TemplateWrapper.propTypes = {
   children: PropTypes.func,
 }
 
-export default TemplateWrapper
+export default TemplateWrapper;
