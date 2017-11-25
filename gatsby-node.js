@@ -1,20 +1,12 @@
-const _ = require(`lodash`);
-const Promise = require(`bluebird`);
 const path = require(`path`);
-const slash = require(`slash`);
 
-// Implement the Gatsby API “createPages”. This is
-// called after the Gatsby bootstrap is finished so you have
-// access to any information necessary to programmatically
-// create pages.
-exports.createPages = ({ graphql, boundActionCreators }) => {
+exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
+
   return new Promise((resolve, reject) => {
-    // The “graphql” function allows us to run arbitrary
-    // queries against the local Contentful graphql schema. Think of
-    // it like the site has a built-in database constructed
-    // from the fetched data that you can run queries against.
-    graphql(
+    const categoryTemplate = path.resolve('src/templates/category.js');
+    resolve(
+      graphql(
       `
         {
           allContentfulCategory {
@@ -27,76 +19,73 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           }
         }
       `
-    )
-      .then(result => {
+      ).then(result => {
         if (result.errors) {
           reject(result.errors)
         }
 
-        // Create Category pages
-        const categoryTemplate = path.resolve(`./src/templates/category.js`)
-        // We want to create a detailed page for each
-        // product node. We'll just use the Contentful id for the slug.
-        _.each(result.data.allContentfulCategory.edges, edge => {
-          // Gatsby uses Redux to manage its internal state.
-          // Plugins and sites can use functions like "createPage"
-          // to interact with Gatsby.
+        // Create static pages for category pages
+        result.data.allContentfulCategory.edges.forEach(({ node }) => {
+          const path = node.slug;
           createPage({
-            // Each page is required to have a `path` as well
-            // as a template component. The `context` is
-            // optional but is often necessary so the template
-            // can query data specific to each page.
-            path: `/${edge.node.slug}/`,
-            component: slash(categoryTemplate),
+            path,
+            component: categoryTemplate,
+            // If you have a layout component at src/layouts/blog-layout.js
+            //layout: `blog-layout`,
             context: {
-              slug: edge.node.slug,
-            },
+              path
+            }
           })
-          resolve()          
         })
       })
-      /*.then(() => {
-        graphql(
-          `
-            {
-              allContentfulCategory(limit: 1000) {
-                edges {
-                  node {
+    )
+  })
+}
+    
+/*
+exports.createPages = ({ graphql, boundActionCreators }) => {
+  const { createPage } = boundActionCreators
+  return new Promise((resolve, reject) => {
+    resolve(
+      graphql(
+        `
+          {
+            allContentfulCategory {
+              edges {
+                node {
+                  id
+                  slug
+                  category {
                     id
+                    slug
                   }
                 }
               }
             }
-          `
-        ).then(result => {
-          if (result.errors) {
-            reject(result.errors)
           }
+        `
+      ).then(result => {
+        if (result.errors) {
+          reject(result.errors)
+        }
 
-          // Create Category pages
-          const categoryTemplate = path.resolve(`./src/templates/category.js`)
-          // We want to create a detailed page for each
-          // category node. We'll just use the Contentful id for the slug.
-          _.each(result.data.allContentfulCategory.edges, edge => {
-            // Gatsby uses Redux to manage its internal state.
-            // Plugins and sites can use functions like "createPage"
-            // to interact with Gatsby.
-            createPage({
-              // Each page is required to have a `path` as well
-              // as a template component. The `context` is
-              // optional but is often necessary so the template
-              // can query data specific to each page.
-              path: `/categories/${edge.node.id}/`,
-              component: slash(categoryTemplate),
-              context: {
-                id: edge.node.id,
-              },
-            })
+        // Create Page pages
+        const categoryTemplate = path.resolve(`./src/templates/category.js`)
+        // We want to create a detailed page for each
+        // page node;
+        
+        result.data.allContentfulCategory.edges.forEach(({ node }) => {
+          const slug = node.slug;
+          console.log(slug)       
+          createPage({
+            path: path,
+            component: categoryTemplate,
+            context: {
+              slug: path,
+            }              
           })
-
-          resolve()
         })
       })
-      */
+    )
   })
-}
+}*/

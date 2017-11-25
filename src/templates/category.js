@@ -5,6 +5,7 @@ class Category extends Component {
   render() {
     const page = this.props.data.page;
     const { title, body, pages } = page;
+    console.log(this.props);
     return (
       <div>
         <h1>{title}</h1>
@@ -36,8 +37,8 @@ class Category extends Component {
 export default Category;
 
 export const categoryQuery = graphql`
-  query CategoryQuery($slug: String!) {
-    page: contentfulCategory(slug: {eq: $slug}) {
+  query CategoryQuery($path: String!) {
+    page: contentfulCategory(slug: {eq: $path}) {
       id
       title
       body {
