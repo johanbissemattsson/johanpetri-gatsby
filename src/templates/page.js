@@ -8,29 +8,30 @@ class Page extends Component {
     const page = this.props.data.page;
     const { title, body, pages } = page;
     return (
-      <div>
-        <Helmet title={`${page.title} | ${site.siteMetadata.title}`} />
-        <h1>{title}</h1>
-        {body &&
-          <div dangerouslySetInnerHTML={{__html: body.content.html}} />
-        }
-        {pages &&
-          <ul>
-            {pages.map(( node, i) => {
-              return (
-                <li key={node.id}>
-                  <Link to={node.slug}>
-                    <h3>{node.title}</h3>
-                    {node.description && 
-                      <div dangerouslySetInnerHTML={{__html: node.description.content.html}} />
-                    }
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-        }
-        <Link to="/">Go back to the homepage</Link>
+      <div className='content'>
+        <article>      
+          <Helmet title={`${page.title} | ${site.siteMetadata.title}`} />
+          <h1>{title}</h1>
+          {body &&
+            <div dangerouslySetInnerHTML={{__html: body.content.html}} />
+          }
+          {pages &&
+            <ul>
+              {pages.map(( node, i) => {
+                return (
+                  <li key={node.id}>
+                    <Link to={node.slug}>
+                      <h3>{node.title}</h3>
+                      {node.description && 
+                        <div dangerouslySetInnerHTML={{__html: node.description.content.html}} />
+                      }
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+          }
+        </article>
       </div>
     )
   }
