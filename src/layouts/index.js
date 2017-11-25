@@ -24,10 +24,6 @@ const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet
       title='Johan Petri'
-      meta={[
-        { name: 'description', content: 'Director, Dramaturgue and Artistic Researcher' },
-        { name: 'keywords', content: 'theater, music, performances, sound art, radio plays, artistic research, critical writing' },
-      ]}
     />
     <Header />
     <div
