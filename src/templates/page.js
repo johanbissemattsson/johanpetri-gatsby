@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
 
-class Category extends Component {
+class Page extends Component {
   render() {
     const page = this.props.data.page;
     const { title, body, pages } = page;
@@ -34,41 +34,18 @@ class Category extends Component {
   }
 }
 
-export default Category;
+export default Page;
 
-export const categoryQuery = graphql`
-  query CategoryQuery($slug: String!) {
-    page: contentfulCategory(slug: {eq: $slug}) {
+export const pageQuery = graphql`
+  query PageQuery($slug: String!) {
+    page: contentfulPage(slug: {eq: $slug}) {
       id
       title
       body {
         content: childMarkdownRemark {
           html
         }
-       }
-       pages {
-        id
-        title
-        description: childContentfulPageDescriptionTextNode {
-          content: childMarkdownRemark {
-            html
-           }
-         }
-         featuredImage {
-          id
-          file {
-            url
-            fileName
-            contentType
-            details {
-               image {
-                width
-                height
-              } 
-             }
-           }
-         }
-       }
+      }
     }
   }
 `

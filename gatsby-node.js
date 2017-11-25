@@ -5,6 +5,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
   return new Promise((resolve, reject) => {
     const categoryTemplate = path.resolve('src/templates/category.js');
+    const pageTemplate = path.resolve('src/templates/page.js');
     resolve(
       graphql(
       `
@@ -26,6 +27,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
 
         // Create static pages for category pages
         result.data.allContentfulCategory.edges.forEach(({ node }) => {
+          const slug = node.slug;
           const path = node.slug;
           createPage({
             path,
@@ -33,59 +35,51 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             // If you have a layout component at src/layouts/blog-layout.js
             //layout: `blog-layout`,
             context: {
-              path
+              slug
             }
           })
         })
-      })
-    )
-  })
-}
-    
-/*
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
-  return new Promise((resolve, reject) => {
-    resolve(
-      graphql(
-        `
-          {
-            allContentfulCategory {
-              edges {
-                node {
-                  id
-                  slug
-                  category {
+      }).then(() => {
+        graphql(
+          `
+            {
+              allContentfulPage {
+                edges {
+                  node {
                     id
                     slug
+                    category {
+                      id
+                      slug
+                    }
                   }
                 }
               }
             }
+          `
+        ).then(result => {
+          if (result.errors) {
+            reject(result.errors)
           }
-        `
-      ).then(result => {
-        if (result.errors) {
-          reject(result.errors)
-        }
-
-        // Create Page pages
-        const categoryTemplate = path.resolve(`./src/templates/category.js`)
-        // We want to create a detailed page for each
-        // page node;
-        
-        result.data.allContentfulCategory.edges.forEach(({ node }) => {
-          const slug = node.slug;
-          console.log(slug)       
-          createPage({
-            path: path,
-            component: categoryTemplate,
-            context: {
-              slug: path,
-            }              
-          })
-        })
-      })
+          
+          // Create static pages for normal pages
+          result.data.allContentfulPage.edges.forEach(({ node }) => {
+            const category = Array.isArray(node.category) ? node.category[0].slug : node.category.slug;           
+            const slug = node.slug;
+            const path = category + '/' + slug;
+            createPage({
+              path: path,
+              component: pageTemplate,
+              // If you have a layout component at src/layouts/blog-layout.js
+              //layout: `blog-layout`,
+              context: {
+                slug,
+                category
+              }
+            })
+          })                   
+        })  
+      }) 
     )
   })
-}*/
+}
