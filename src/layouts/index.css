@@ -1,0 +1,24 @@
+.site-header .headroom {
+  display: flex;
+  background: rgba(0,0,0,0.05); 
+}
+
+.site-header h1 {
+  margin: 0;
+  flex: 1;
+}
+
+.site-header nav {
+  display: flex;
+  flex: 3; 
+}
+
+.site-header ul {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
