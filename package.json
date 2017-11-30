@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Johan Bisse Mattsson <johan@johanbissemattsson.se>",
   "dependencies": {
+    "exenv": "^1.2.2",
     "gatsby": "^1.9.119",
     "gatsby-link": "^1.6.28",
     "gatsby-plugin-react-helmet": "^1.0.8",

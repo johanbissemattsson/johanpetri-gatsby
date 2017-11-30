@@ -3,10 +3,15 @@ import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
-import 'lazysizes';
+import { canUseDOM } from 'exenv';
+
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+
+if (canUseDOM) {
+  require('lazysizes');
+}
 
 class Page extends Component {
   constructor() {

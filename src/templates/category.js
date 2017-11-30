@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
-import Helmet from 'react-helmet'
+import Helmet from 'react-helmet';
+import { canUseDOM } from 'exenv';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+
+if (canUseDOM) {
+  require('lazysizes');
+}
 
 class Category extends Component {
   render() {
