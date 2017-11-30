@@ -10,7 +10,7 @@ export default class Footer extends Component {
             <div className='about'>
               <h3>Johan Petri</h3>
               <p>Theater Director, Dramatist, Dramaturge, Composer and Artistic Researcher</p>
-              <Link to='cv'>View curriculum vitae</Link>
+              <Link to='cv'>&mdash; View curriculum vitae</Link>
             </div>
             <div className='contact'>
               <h3>Contact</h3>
