@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import WebFont from 'webfontloader';
+import { canUseDOM } from 'exenv';
 
 import 'normalize.css';
-import './index.css'
+import './index.css';
 
 export default class TemplateWrapper extends Component {
   componentWillMount() {
-    WebFont.load({
-      google: {
-        families: ['Spectral', 'Source Code Pro', 'Source Sans Pro']
-      }
-    })
+    if (canUseDOM) {
+      const WebFont = require('webfontloader');
+      
+      WebFont.load({
+        google: {
+          families: ['Spectral', 'Source Code Pro', 'Source Sans Pro']
+        }
+      })
+    }
   }
   
   render() {

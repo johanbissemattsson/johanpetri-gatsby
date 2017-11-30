@@ -5,7 +5,6 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import { canUseDOM } from 'exenv';
 
-
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
