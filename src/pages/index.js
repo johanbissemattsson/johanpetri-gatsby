@@ -1,12 +1,41 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React, { Component } from 'react';
+import Link from 'gatsby-link';
 
-const IndexPage = () => (
-  <div>
-    <h1>Hejsan svejsan</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-  </div>
-)
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
-export default IndexPage
+import backgroundImage from '../media/header-background.jpg';
+
+export default class IndexPage extends Component {
+  constructor() {
+    super();
+    this.state = {
+      initIntro: false,
+      initBackground: false
+    }
+  }
+
+  componentDidMount() {
+    this.setState({initIntro: true});
+  }
+
+  componentWillUnmount() {
+    this.setState({initIntro: false});
+  }
+
+  render() {
+    return (
+      <div className='site'>
+        <Header />
+          <div className='home' style={{backgroundImage: 'url('+ backgroundImage + ')'}}>
+            <div className='intro'>
+              <h2 className={!this.state.initIntro && 'uninitialized'}>Theater, music and various offshoots</h2>
+              <p className={!this.state.initIntro && 'uninitialized'}>Creative and theoretical explorations</p>
+            </div>
+          </div>
+        <Footer />
+      </div>
+    )
+  }
+
+}
