@@ -27,11 +27,12 @@ export default class IndexPage extends Component {
     return (
       <div className='site'>
         <Header />
-          <div className='home' style={{backgroundImage: 'url('+ backgroundImage + ')'}}>
+          <div className='home'>
             <div className='intro'>
               <h2 className={!this.state.initIntro && 'uninitialized'}>Theater, music and various offshoots</h2>
               <p className={!this.state.initIntro && 'uninitialized'}>Creative and theoretical explorations</p>
             </div>
+            <div className='background-image' style={{backgroundImage: 'url('+ backgroundImage + ')'}}/>
           </div>
         <Footer />
       </div>
