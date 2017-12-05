@@ -127,10 +127,6 @@ h1, h2, h3, h4 {
   padding: 0;
 }
 
-.dock-menu ul li {
-
-}
-
 .dock-menu ul .active-category {
   background: rgba(0,0,0,0.10);
 }
@@ -152,8 +148,11 @@ h1, h2, h3, h4 {
   display: none;
 }
 
-@media screen and (min-width: 1024px) {
+.headroom {
+  background: #020106;
+}
 
+@media screen and (min-width: 1024px) {
   .site-header .nav-button-container {
     display: none;
   }
