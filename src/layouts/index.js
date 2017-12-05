@@ -13,7 +13,7 @@ export default class TemplateWrapper extends Component {
       
       WebFont.load({
         google: {
-          families: ['Spectral', 'Source Code Pro', 'Source Sans Pro']
+          families: ['Spectral', 'Source Code Pro', 'Source Sans Pro', 'Material Icons']
         }
       })
     }

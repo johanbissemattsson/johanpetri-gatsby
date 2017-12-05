@@ -14,7 +14,7 @@ class Category extends Component {
   render() {
     const site = this.props.data.site;
     const page = this.props.data.page;
-    const { title, body, pages } = page;
+    const { title, body, extraText, pages } = page;
     return (
       <div className='site'>
         <Header category={page.slug} />
@@ -25,6 +25,9 @@ class Category extends Component {
               <h2 className='page-title'>{title}</h2>
               {body &&
                 <div className='page-body' dangerouslySetInnerHTML={{__html: body.content.html}} />
+              }
+              {extraText &&
+                <div className='page-extra-content' dangerouslySetInnerHTML={{__html: extraText.content.html}} />
               }
             </div>
             {pages &&
@@ -37,7 +40,7 @@ class Category extends Component {
                           <Link to={page.slug + '/' + node.slug}>
                             <h3>{node.title}</h3>
                             {node.featuredImage &&
-                              <img className='project-featured-image' src={node.featuredImage.file.url} width={node.featuredImage.file.details.width} height={node.featuredImage.file.details.height} alt={node.title} />
+                              <img className='project-featured-image lazyload' src={node.featuredImage.file.url} srcSet={node.featuredImage.lqip.base64} data-srcSet={node.featuredImage.file.url + ' 1x'} width={node.featuredImage.file.details.width} height={node.featuredImage.file.details.height} alt={node.title} data-sizes='auto'/>
                             }
                             {node.description && 
                               <div className='project-description' dangerouslySetInnerHTML={{__html: node.description.content.html}} />
@@ -72,6 +75,11 @@ export const categoryQuery = graphql`
       title
       slug
       body {
+        content: childMarkdownRemark {
+          html
+        }
+       }
+       extraText {
         content: childMarkdownRemark {
           html
         }
