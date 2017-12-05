@@ -29,8 +29,8 @@ export default class IndexPage extends Component {
         <Header />
           <div className='home'>
             <div className='intro'>
-              <h2 className={!this.state.initIntro && 'uninitialized'}>Theater, music and various offshoots</h2>
-              <p className={!this.state.initIntro && 'uninitialized'}>Creative and theoretical explorations</p>
+              <h2 className={!this.state.initIntro ? 'uninitialized' : 'initialized'}>Theater, music and various offshoots</h2>
+              <p className={!this.state.initIntro ? 'uninitialized' : 'initialized'}>Creative and theoretical explorations</p>
             </div>
             <div className='background-image-container'>
               <div className='background-image' style={{backgroundImage: 'url('+ backgroundImage + ')'}}/>
