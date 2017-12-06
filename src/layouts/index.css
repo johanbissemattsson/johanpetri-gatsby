@@ -586,11 +586,13 @@ sup a {
 
 .related-projects .project-item img {
   filter: grayscale(1);
+  opacity: 0.75;
   
 }
 
 .related-projects .project-item:hover img {
   filter: grayscale(0);
+  opacity: 1;
 }
 
 .page-credits {
@@ -642,11 +644,17 @@ sup a {
 
 .cv-year {
   width: 17.5%;
-  font-size: .875em;
+  font-size: .75em;
   font-family: Source Code Pro;
   font-weight: 200;
   padding-right: 1em;
   vertical-align: top;
+}
+
+@media screen and (min-width: 720px) {
+  .cv-year {
+    font-size: 0.875em;
+  }
 }
 
 table {
