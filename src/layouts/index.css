@@ -554,7 +554,7 @@ sup a {
 
 .unslicked .project-image-container {
   border: none;
-  margin: 0 5%;
+  margin: 0 5% 1em 5%;
 }
 
 .unslicked .project-image-container img {
