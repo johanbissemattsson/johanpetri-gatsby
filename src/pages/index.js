@@ -23,6 +23,11 @@ export default class IndexPage extends Component {
     this.setState({initIntro: false});
   }
 
+  /*
+    <h2 className={!this.state.initIntro ? 'uninitialized' : 'initialized'}>Theater, music and various offshoots</h2>
+    <p className={!this.state.initIntro ? 'uninitialized' : 'initialized'}>Creative and theoretical explorations</p>
+  */
+
   render() {
     return (
       <div className='site'>
@@ -30,8 +35,8 @@ export default class IndexPage extends Component {
           <div className='home'>
             <div className='intro-container'>
               <div className='intro'>
-                <h2 className={!this.state.initIntro ? 'uninitialized' : 'initialized'}>Theater, music and various offshoots</h2>
-                <p className={!this.state.initIntro ? 'uninitialized' : 'initialized'}>Creative and theoretical explorations</p>
+                <h2>Theater, music and various offshoots</h2>
+                <p>Creative and theoretical explorations</p>
               </div>
               <div className='background-image-container'>
                 <div className='background-image' style={{backgroundImage: 'url('+ backgroundImage + ')'}}/>

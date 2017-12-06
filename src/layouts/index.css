@@ -380,10 +380,12 @@ h1, h2, h3, h4 {
 
 .home .intro h2.uninitialized {
   transform: translateY(-10px);
+  opacity: 0;
 }
 
 .home .intro p.uninitialized {
-  transform: translateY(16px);  
+  transform: translateY(16px);
+  opacity: 0;
 }
 
 .background-image-container {
