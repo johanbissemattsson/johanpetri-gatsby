@@ -28,9 +28,11 @@ export default class IndexPage extends Component {
       <div className='site'>
         <Header />
           <div className='home'>
-            <div className='intro'>
-              <h2 className={!this.state.initIntro ? 'uninitialized' : 'initialized'}>Theater, music and various offshoots</h2>
-              <p className={!this.state.initIntro ? 'uninitialized' : 'initialized'}>Creative and theoretical explorations</p>
+            <div className='intro-container'>
+              <div className='intro'>
+                <h2 className={!this.state.initIntro ? 'uninitialized' : 'initialized'}>Theater, music and various offshoots</h2>
+                <p className={!this.state.initIntro ? 'uninitialized' : 'initialized'}>Creative and theoretical explorations</p>
+              </div>
             </div>
             <div className='background-image-container'>
               <div className='background-image' style={{backgroundImage: 'url('+ backgroundImage + ')'}}/>

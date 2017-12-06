@@ -157,6 +157,10 @@ h1, h2, h3, h4 {
     display: none;
   }
 
+  .site-header .horizontal-menu {
+    z-index: 10000;
+  }
+
   .site-header .horizontal-menu ul {
     flex: 6;
     display: flex;
@@ -323,6 +327,7 @@ h1, h2, h3, h4 {
 /* Home */
 
 .home {
+  display: table;
   display: flex;
   justify-content: center;
   flex-direction: column;  
@@ -330,11 +335,18 @@ h1, h2, h3, h4 {
   background: #020106;
 }
 
+.home .intro-container {
+  display: table-cell;
+  vertical-align: middle;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;  
+}
+
 .home .intro {
   color: #fff;
   margin: 0 5%;
-  position: absolute;
-  z-index: 1;  
 }
 
 .home .intro h2 {
@@ -367,10 +379,12 @@ h1, h2, h3, h4 {
 }
 
 .home .intro h2.uninitialized {
+  opacity: 0;
   transform: translateY(-10px);
 }
 
 .home .intro p.uninitialized {
+  opacity: 0;
   transform: translateY(16px);  
 }
 
