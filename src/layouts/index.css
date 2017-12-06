@@ -339,12 +339,12 @@ h1, h2, h3, h4 {
   display: table-cell;
   vertical-align: middle;
   display: flex;
-  position: absolute;
   width: 100%;
-  z-index: 1000;  
 }
 
 .home .intro {
+  position: absolute;
+  z-index: 1000;    
   color: #fff;
   margin: 0 5%;
 }
