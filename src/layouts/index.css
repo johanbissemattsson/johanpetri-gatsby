@@ -552,6 +552,16 @@ sup a {
   border-right: 0.5em solid #fff;
 }
 
+.unslicked .project-image-container {
+  border: none;
+  margin: 0 5%;
+}
+
+.unslicked .project-image-container img {
+  width: 100%;
+  height: auto;
+}
+
 .image-slider-container {
   margin: 3em 0;
   transition: opacity 0.25s;
