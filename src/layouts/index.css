@@ -525,6 +525,10 @@ h1, h2, h3, h4 {
   margin: 0 auto;
 }
 
+sup a {
+  color: #ee7202 !important;
+}
+
 @media screen and (min-width: 768px) {
   .page-body, .page-extra-content {
     text-align: justify;
@@ -619,6 +623,7 @@ h1, h2, h3, h4 {
 .page-extra-content p {
   font-size: 0.875em;
   line-height: 1.75; 
+  color: #666;
 }
 
 .cv-year {
