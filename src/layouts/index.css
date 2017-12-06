@@ -529,6 +529,10 @@ sup a {
   color: #ee7202 !important;
 }
 
+.extra-content-container hr {
+  margin: 2em 0;
+}
+
 @media screen and (min-width: 768px) {
   .page-body, .page-extra-content {
     text-align: justify;
