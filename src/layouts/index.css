@@ -43,6 +43,7 @@ h1, h2, h3, h4 {
 
 .site-header .site-title {
   margin: 1em 0;
+  padding-right: 2em;
   flex: 2;
 }
 
