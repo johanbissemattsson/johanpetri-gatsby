@@ -46,8 +46,8 @@ class Page extends Component {
       lazyload: true,
       arrows: true,
       responsive: [ { breakpoint: 768, settings: { slidesToShow: 3} }, { breakpoint: 1024, settings: { slidesToShow: 2 } }],  
-      nextArrow: (<button {...this.props}><i class="material-icons" style={{fontStyle: "normal"}}>chevron_right</i></button>),
-      prevArrow: (<button {...this.props}><i class="material-icons" style={{fontStyle: "normal"}}>chevron_left</i></button>),
+      //nextArrow: (<button {...this.props}><i class="material-icons" style={{fontStyle: "normal"}}>chevron_right</i></button>),
+      //prevArrow: (<button {...this.props}><i class="material-icons" style={{fontStyle: "normal"}}>chevron_left</i></button>),
     };
 
     return (
