@@ -8,6 +8,7 @@ import Footer from '../components/Footer';
 
 if (canUseDOM) {
   require('lazysizes');
+  require('lazysizes/plugins/respimg/ls.respimg.js');  
 }
 
 class Category extends Component {
