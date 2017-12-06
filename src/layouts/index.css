@@ -642,3 +642,29 @@ sup a {
 table {
   text-align: left;
 }
+.slick-next, .slick-prev {
+  height: 48px;
+  width: 48px;
+  line-height: 0;
+  font-size: 36px;
+  font-style: normal;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(0,0,0,0.25);
+  border-radius: 48px;
+  top: 50%;
+  transform: translate(0,-50%);
+  border: none;
+  outline: 0;
+  position: absolute;
+  z-index: 1000;
+  font-family: 'Material Icons';
+}
+
+.slick-prev {
+  left: 16px;
+}
+
+.slick-next {
+  right: 16px;
+}
