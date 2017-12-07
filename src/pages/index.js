@@ -11,7 +11,8 @@ export default class IndexPage extends Component {
     super();
     this.state = {
       initIntro: false,
-      initBackground: false
+      initBackground: false,
+      backgroundLoaded: false
     }
   }
 
@@ -39,7 +40,9 @@ export default class IndexPage extends Component {
                 <p>Creative and theoretical explorations</p>
               </div>
               <div className='background-image-container'>
-                <div className='background-image' style={{backgroundImage: 'url('+ backgroundImage + ')'}}/>
+                <div className={'background-image ' + (!this.state.backgroundLoaded ? 'background-not-loaded' : 'background-loaded')}>
+                  <img src={backgroundImage} alt='Background' onLoad={() => this.setState({backgroundLoaded: true})} />
+                </div>
               </div>
             </div>
           </div>
