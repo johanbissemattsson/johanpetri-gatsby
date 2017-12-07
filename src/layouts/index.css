@@ -418,7 +418,7 @@ h1, h2, h3, h4 {
   transform-origin: right;
 }
 
-.background-image .background-not-loaded {
+.background-image-container .background-not-loaded {
   transform: scale(1.1);
   opacity: 0;
 }
