@@ -41,7 +41,7 @@ export default class IndexPage extends Component {
               </div>
               <div className='background-image-container'>
                 <div className={'background-image ' + (!this.state.backgroundLoaded ? 'background-not-loaded' : 'background-loaded')}>
-                  <img src={backgroundImage} alt='Background' onLoad={() => this.setState({backgroundLoaded: true})} />
+                  <img src={backgroundImage} alt='Background' onLoad={() => this.setState({backgroundLoaded: true})} width='1365' height='1838'/>
                 </div>
               </div>
             </div>
