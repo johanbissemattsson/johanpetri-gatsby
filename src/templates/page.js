@@ -44,8 +44,10 @@ class Page extends Component {
       centerPadding: 0,
       variableWidth: true,
       lazyload: true,
-      arrows: false,
-      responsive: [ { breakpoint: 1024, settings: 'unslick' }],  
+      arrows: true,
+      responsive: [ { breakpoint: 1024, settings: 'unslick' }],
+      nextArrow: (<button {...this.props}><i class="material-icons" style={{fontStyle: "normal"}}>chevron_right</i></button>),
+      prevArrow: (<button {...this.props}><i class="material-icons" style={{fontStyle: "normal"}}>chevron_left</i></button>),
     };
 
     return (
