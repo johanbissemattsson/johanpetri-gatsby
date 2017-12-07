@@ -570,6 +570,7 @@ sup a {
 .slick-slider {
   max-height: 640px;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .related-projects {
