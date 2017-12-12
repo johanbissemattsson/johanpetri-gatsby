@@ -11,7 +11,9 @@ export default class Footer extends Component {
           <div className='site-info'>
             <div className='about'>
               <div className='portrait'>
-                <img src={portraitImage} width={512} height={512} alt='Photo of Johan Petri' />
+                <Link to='cv'>
+                  <img src={portraitImage} width={512} height={512} alt='Photo of Johan Petri' />
+                </Link>
               </div>
               <div className='introduction'>
                 <h3>Johan Petri</h3>
