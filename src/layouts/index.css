@@ -273,6 +273,39 @@ h1, h2, h3, h4 {
   padding-right: 5%;
 }
 
+@media screen and (min-width: 960px) {
+  .site-info .about {
+    display: table;
+    display: flex;
+  }
+
+  .site-info .about .portrait {
+    display: table-cell;
+    margin-right: 5%;
+    background: white;
+  }
+  
+  .site-info .about .portrait {
+    display: table-cell;
+    margin-right: 5%;
+  }
+}
+
+.site-info .about .portrait {
+  max-width: 128px;
+  background: white;
+  margin-bottom: 1em;
+}
+  
+.site-info .about .portrait img {
+  width: 100%;
+  height: auto;
+}
+
+.site-info .about .introduction {
+  display: table-cell;
+}
+
 .site-info .contact, .site-info .links {
   flex: 1;
 }
@@ -288,8 +321,6 @@ h1, h2, h3, h4 {
     font-size: 0.875em;
   }
 }
-
-
 
 .site-info .contact address {
   font-style: normal;

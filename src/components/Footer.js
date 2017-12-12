@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Link from 'gatsby-link'
+import Link from 'gatsby-link';
+
+import portraitImage from '../media/portrait-johanpetri.jpg';
 
 export default class Footer extends Component {
   render() {
@@ -8,9 +10,14 @@ export default class Footer extends Component {
         <div className='site-info-container'>
           <div className='site-info'>
             <div className='about'>
-              <h3>Johan Petri</h3>
-              <p>Theater Director, Dramatist, Dramaturge, Composer and Artistic Researcher</p>
-              <Link to='cv'>&mdash; View curriculum vitae</Link>
+              <div className='portrait'>
+                <img src={portraitImage} width={512} height={512} alt='Photo of Johan Petri' />
+              </div>
+              <div className='introduction'>
+                <h3>Johan Petri</h3>
+                <p>Theater Director, Dramatist, Dramaturge, Composer and Artistic Researcher</p>
+                <Link to='cv'>&mdash; View curriculum vitae</Link>
+              </div>
             </div>
             <div className='contact'>
               <h3>Contact</h3>
