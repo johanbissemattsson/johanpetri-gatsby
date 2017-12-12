@@ -282,7 +282,6 @@ h1, h2, h3, h4 {
   .site-info .about .portrait {
     display: table-cell;
     margin-right: 5%;
-    background: white;
   }
   
   .site-info .about .portrait {
@@ -292,8 +291,7 @@ h1, h2, h3, h4 {
 }
 
 .site-info .about .portrait {
-  max-width: 128px;
-  background: white;
+  max-width: 192px;
   margin-bottom: 1em;
 }
   
