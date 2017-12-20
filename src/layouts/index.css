@@ -817,6 +817,8 @@ table {
   left: 0;
   right: 0;
   width: 100%;
+  box-sizing: border-box;
+  padding: 0 0.5em;
 }
 
 .home-nav-item:hover img {
