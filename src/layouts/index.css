@@ -8,11 +8,11 @@ h1, h2, h3, h4 {
   font-family: 'Spectral', serif;
 }
 
-.home, .main-content-container {
+.home-splash, .main-content-container {
   font-size: 1.125em;
 }
 
-.home, .main-content-container, .extra-content-container {
+.home-splash, .main-content-container, .extra-content-container {
   line-height: 1.5;
 }
 
@@ -360,16 +360,16 @@ h1, h2, h3, h4 {
 
 /* Home */
 
-.home {
+.home-splash {
   display: table;
   display: flex;
   justify-content: center;
   flex-direction: column;  
-  min-height: 87vh;
+  min-height: 75vh;
   background: #020106;
 }
 
-.home .intro-container {
+.home-splash .intro-container {
   display: table-cell;
   vertical-align: middle;
   display: flex;
@@ -377,14 +377,14 @@ h1, h2, h3, h4 {
   padding-bottom: 4em;
 }
 
-.home .intro {
+.home-splash .intro {
   position: absolute;
   z-index: 1000;    
   color: #fff;
   margin: 0 5%;
 }
 
-.home .intro h2 {
+.home-splash .intro h2 {
   margin: 0;
   font-size: calc(22px + 8 * ((100vw - 240px) / 680));
   font-weight: normal;
@@ -393,7 +393,7 @@ h1, h2, h3, h4 {
   transition: transform 2s cubic-bezier(.25,.8,.25,1), opacity 3s;
 }
 
-.home .intro p {
+.home-splash .intro p {
   font-family: 'Source Code Pro', monospace;
   font-size: 0.675em;  
   margin: 0.5em 0 0;
@@ -402,23 +402,23 @@ h1, h2, h3, h4 {
 }
 
 @media screen and (min-width: 768px) {
-  .home .intro p {    
+  .home-splash .intro p {    
     font-size: 0.75em;  
   }
 }
 
 @media screen and (min-width: 960px) {
-  .home .intro p {    
+  .home-splash .intro p {    
     font-size: 0.875em;  
   }
 }
 
-.home .intro h2.uninitialized {
+.home-splash .intro h2.uninitialized {
   transform: translateY(-10px);
   opacity: 0;
 }
 
-.home .intro p.uninitialized {
+.home-splash .intro p.uninitialized {
   transform: translateY(16px);
   opacity: 0;
 }
@@ -437,12 +437,12 @@ h1, h2, h3, h4 {
   background-position: bottom right;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100vh;
+  height: 85vh;
   transition: all 2s;
   max-width: 75%;
   opacity: 0.5;
   position: absolute;
-  bottom: 0;
+  bottom: 15vh;
   right: 0;
 }
 
@@ -742,4 +742,91 @@ table {
 
 .slick-next {
   right: 16px;
+}
+
+.home-nav {
+  background: #020106;
+  padding: 1em 0;
+}
+
+
+.home-nav .nav-container {
+  margin: 0 5% 2.5em 5%;
+}
+
+.home-nav nav {
+  margin: 0 auto;
+}
+.home-nav nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0 -1em;
+  padding: 0;
+}
+
+.home-nav-title {
+  font-size: 0.875em;
+}
+
+.home-nav nav li {
+  display: inline-block;
+  text-align: center;
+  border-left: 1em solid #020106;
+  border-right: 1em solid #020106;
+  box-sizing: border-box;
+  margin-bottom: 1.5em;
+}
+
+
+@media screen and (min-width: 640px) {
+  .home-nav nav li {    
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .home-nav nav li {    
+    width: 33.3%;  
+  }
+
+  .home-nav .home-nav-title {
+    font-size: 1em;
+  }
+}
+
+.home-nav nav li img {
+  width: 100%;
+  height: auto;
+  transition: all .5s cubic-bezier(.25,.8,.25,1);
+}
+
+.home-nav nav li a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.home-nav .home-nav-item .home-nav-title {
+  margin-bottom: 1.5em;
+  transition: all .5s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.home-nav-item:hover img {
+  transform: scale(1.05);
+}
+
+.home-nav-title {
+}
+
+.home-nav-link:hover .home-nav-title {
+  color: #fff;
+  bottom: -4px;
 }
