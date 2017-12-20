@@ -779,7 +779,7 @@ table {
 }
 
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 480px) {
   .home-nav nav li {    
     width: 50%;
   }
