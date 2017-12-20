@@ -825,9 +825,6 @@ table {
   transform: scale(1.05);
 }
 
-.home-nav-title {
-}
-
 .home-nav-link:hover .home-nav-title {
   color: #fff;
   bottom: -4px;
